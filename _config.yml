@@ -9,7 +9,7 @@
 locale                   : "en-US"
 title                    : "Prof. Tessa Davey"
 title_separator          : "-"
-name                     : &name "Your Name"
+name                     : &name "Theresa Davey"
 description              : &description "personal description"
 url                      : "https://tessadavey.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -102,7 +102,7 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "https://www.linkedin.com/in/theresadavey/"
+  linkedin         : "theresadavey"
   orcid            : "https://orcid.org/0000-0002-4262-1054"
   pinterest        :
   soundcloud       :
