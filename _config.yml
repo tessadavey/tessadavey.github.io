@@ -115,6 +115,10 @@ author:
   xing             :
   youtube          :
   wikipedia        :
+  links            : 
+     - label: "researchmap"
+       icon: "fas fa-fw fa-map"
+       url: "https://researchmap.jp/theresa?lang=en"  
 
 
 # Reading Files
