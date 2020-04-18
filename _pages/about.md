@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-Theresa Davey is an assistant professor at Tohoku University. She previously completed her PhD and worked as a postdoctoral research associate at Imperial College London, United Kingdom.
+Tessa (Theresa) Davey is an assistant professor at Tohoku University. She previously completed her PhD and worked as a postdoctoral research associate at Imperial College London, United Kingdom.
 
 Her PhD research considered point defects in zirconium carbide, and lead to the development of a method to incorporate certain defect related properties, such as formation energies, in a CALPHAD description directly. She was awarded a JSPS Grant-in-Aid for Early Career Scientists in 2019 to further explore CALPHAD modelling of structural point defects.
 
