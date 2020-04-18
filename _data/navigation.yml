@@ -15,7 +15,9 @@ main:
   - title: "Teaching"
     url: /teaching/    
     
-        
+  - title: "Where is Tessa?"
+    url: /tessa/
+
     #  - title: "Blog Posts"
     #url: /year-archive/
     
