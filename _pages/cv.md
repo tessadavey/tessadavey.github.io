@@ -49,6 +49,7 @@ Skills
   * Cluster Variation Method (CVM) and Cluster Expansion Method (CEM)
   * Phase Field Modelling (PFM)
   * Finite Element Modelling
+  * Statistical thermodynamics
 * Data Science
   * Machine learning
   * Process automation
