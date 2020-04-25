@@ -54,15 +54,7 @@ Skills
   * Machine learning
   * Process automation
   * Sequential learning (artificial intelligence)
-* Programming Languages
-  * C/C++
-  * Fortran
-  * Python
-  * Bash
-  * Matlab
 * Other revelant skills
-  * Microsoft Office (Word, Excel, Powerpoint)
-  * LaTeX
   * Higher Education Academy (UK) fellowship (training completed, award not certified) 
 
 Publications
