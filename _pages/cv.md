@@ -19,7 +19,7 @@ Work experience
 ======
 * July 2017 - present: Assistant Professor
   * Tohoku University, Japan
-  * Working with Prof. Ying Chen and Prof. Hideo Miura at the Fracture and Reliability Research Institute within the School of Engineering, in collaboration with Prof. Tetsuo Mohri at the Institute for Materials Research at Tohoku University, as part of the Post-K supercomputer project.
+  * Working at the Fracture and Reliability Research Institute within the School of Engineering, in collaboration with the Institute for Materials Research at Tohoku University.
   * Awarded (PI) Kakenhi Grant-in-Aid for Early Career Researchers 19K15273 (2019-2021), "Developing models for CALPHAD-type phase diagrams that directly consider the effect of structural point defects".
 
 * March 2017 - July 2017: Postdoctoral Research Associate
