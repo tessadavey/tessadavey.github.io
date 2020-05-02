@@ -38,7 +38,7 @@ layout: default
         {% if page.modified %} 
         <p><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> <time datetime="{{ page.modified | date: "%Y-%m-%d" }}">{{ page.modified | date: "%B %d, %Y" }}</time></p>
         {% elsif page.date %}
-          <p><i class="fa fa-calendar-times" style="padding-right 7.4px"></i> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></p>
+          <p><i class="fa fa-calendar-times" style="padding-right:7.4px"></i> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></p>
         {% endif %}
     
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">{% endif %}
