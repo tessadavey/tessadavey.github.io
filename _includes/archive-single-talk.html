@@ -41,7 +41,7 @@
     {% if post.affiliations %}<p class="page__meta"><i></i> {{  post.affiliations }} </p>{% endif %}
     {% if post.venue %}<p class="archive__item-excerpt" itemprop="description"><i></i> {{post.type}}, {{ post.venue }},  {{post.location}} {% endif %}
     <!--    {% if post.venue %}<p class="archive__item-excerpt" itemprop="description"><i class="fas fa-map-marker-alt"></i> {{post.type}}, {{ post.venue }},  {{post.location}} {% endif %}-->
-    {% if post.date %}<p class="page__meta"><i></i> {{ post.date | date: '%B %d, %Y' }}</p>{% endif %}
+    {% if post.date %}<p class="page__meta" style="margin-top: -10px;"><i></i> {{ post.date | date: '%B %d, %Y' }}</p>{% endif %}
     <!--    {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>{% endif %}-->
   </article>
 </div>
