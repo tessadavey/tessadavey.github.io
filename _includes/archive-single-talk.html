@@ -37,8 +37,8 @@
     {% endif %}
     {% if post.date %}<p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date | date: '%B %d, %Y' }}</p>{% endif %}
     {% if post.venue %}<p class="archive__item-excerpt" itemprop="description"><i class="fas fa-map-marker-alt"></i> {{post.type}}, {{ post.venue }},  {{post.location}} {% endif %}
-    {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>{% endif %}
     {% if page.authors %}<p class="page__meta"><i class="fas fa-users" style="padding-right:0.65px"></i> {{  page.authors }} </p>{% endif %}
-       {% if page.affiliations %}<p class="page__meta"><i class="fas fa-university"></i> {{  page.affiliations }} </p>{% endif %}
+    {% if page.affiliations %}<p class="page__meta"><i class="fas fa-university"></i> {{  page.affiliations }} </p>{% endif %}
+    {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>{% endif %}
   </article>
 </div>
