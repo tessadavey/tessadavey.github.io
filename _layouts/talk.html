@@ -22,8 +22,6 @@ layout: default
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
 
     
-       {% if page.authors %}<p><i class="fas fa-users" style="padding-right:0.65px"></i> {{  page.authors }} {% endif %}
-       {% if page.affiliations %}<p style="margin-left:5%;margin-top: -25px;"><i></i> {{  page.affiliations }} {% endif %}
     
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">{% endif %}
     {% if page.modified %}<meta itemprop="dateModified" content="{{ page.modified | date: "%B %d, %Y" }}">{% endif %}
@@ -35,11 +33,14 @@ layout: default
           {% if page.read_time %}
             <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
           {% endif %}
-        {% if page.modified %}
+        {% if page.modified %} 
         <p><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> <time datetime="{{ page.modified | date: "%Y-%m-%d" }}">{{ page.modified | date: "%B %d, %Y" }}</time></p>
         {% elsif page.date %}
           <p><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></p>
         {% endif %}
+
+       {% if page.authors %}<p><i class="fas fa-users" style="padding-right:0.65px"></i> {{  page.authors }} {% endif %}
+       {% if page.affiliations %}<p style="margin-left:5%;margin-top: -25px;"><i></i> {{  page.affiliations }} {% endif %}
         {% if page.type %}<p><i class="fas fa-map-marked-alt" style="padding-right:2.9px"></i> {{page.type}} at {{  page.venue }},  {{page.location}} {% endif %}
        {% if page.session %}<p><i class="fas fa-book-open" style="padding-right:2.9px"></i> {{  page.session }} {% endif %}
 
