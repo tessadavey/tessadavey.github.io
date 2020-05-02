@@ -42,9 +42,6 @@
     {% if post.affiliations %}<p class="page__meta" style="margin-top: -14px;"><i></i> {{  post.affiliations }} </p>{% endif %}
     {% if post.venue %}<p class="archive__item-excerpt" itemprop="description"><i></i> {{post.type}}, {{ post.venue }},  {{post.location}} {% endif %}
     {% if post.date %}<p class="page__meta" style="margin-top: -14px;"><i></i> {{ post.date | date: '%B %d, %Y' }}</p>{% endif %}
-
-    
-    
     </li>
   </article>
 </div>
