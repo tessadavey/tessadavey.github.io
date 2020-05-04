@@ -41,7 +41,7 @@
         {% if post.collection == 'teaching' %}
           <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
 
-          
+
         {% elsif post.collection == 'publications' %}
         <p> {{ post.authors }} </p>
         <p> {{ post.affiliations }} </p>
@@ -49,7 +49,7 @@
 {% if post.number %}
           <p>Published in <i>{{ post.journal }}</i>, {{post.issue}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) {{post.page}} </p>
 {% elsif post.issue %}  
-         <p>Published in <i>{{ post.journal }}</i>, {{post.issue}}, {{post.number}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) {{post.page}}</p>
+         <p><i>{{ post.journal }}</i>, {{post.issue}}, {{post.number}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) {{post.page}}</p>
 {% endif %}
 {% if post.doi %}
  <p> DOI: {{post.doi}} </p>
