@@ -30,7 +30,6 @@ layout: default
 
  {% if page.authors %}<p><i class="fas fa-users" style="padding-right:0.65px"></i> {{  page.authors }} {% endif %}
        {% if page.affiliations %}<p style="margin-left:5%;margin-top: -20px;"><i></i> {{  page.affiliations }} {% endif %}
-
        {% if post.number %}
                   <p>Published in <i>{{ post.journal }}</i>, {{post.issue}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) {{post.page}} </p>
         {% elsif post.issue %}  
