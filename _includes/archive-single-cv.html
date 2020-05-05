@@ -36,7 +36,7 @@
 
 
       {% if post.collection == 'teaching' %}
-            <p class="archive__item-excerpt" itemprop="description"> {{ post.coursetype }}, <i>{{ post.teachingvenue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
+            <p class="archive__item-excerpt" itemprop="description"> {{ post.coursetype }}, <i>{{ post.teachingvenue }}</i>, {{ post.period }} </p>
       {% endif %}
 
       {% if post.collection == 'publications' %}
