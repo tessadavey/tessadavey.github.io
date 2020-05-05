@@ -34,12 +34,6 @@
           {% endif %}
       </h3>
 
-     <!--  {% if post.read_time %}
-            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
-      {% endif %}
-      {% if post.venue%}<p class="archive__item-excerpt" itemprop="description">{{ post.citation }}</p> {% endif %} 
-    -->
-
 
       {% if post.collection == 'teaching' %}
             <p class="archive__item-excerpt" itemprop="description"> {{ post.coursetype }}, <i>{{ post.teachingvenue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
@@ -47,7 +41,7 @@
 
       {% if post.collection == 'publications' %}
             <p class="archive__item-excerpt" itemprop="description"> {{ post.authors }} </p>
-           <!--  <p> {{ post.affiliations }} </p> -->
+         
 
             {% if post.number %}
                   <p class="archive__item-excerpt" itemprop="description" style="margin-top: -14px;"><i>{{ post.journal }}</i> {{post.issue}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) {{post.page}} </p>
