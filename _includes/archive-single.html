@@ -42,29 +42,29 @@
 
 		{% if post.collection == 'teaching' %}
 					<p> {{ post.coursetype }}, <i>{{ post.teachingvenue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
-		{% endif %}
+		
 
-		{% if post.collection == 'publications' %}
+		{% elsif post.collection == 'publications' %}
 					<p class="archive__item-excerpt" itemprop="description"> {{ post.authors }} </p>
 					<p class="page__meta" style="margin-top: -14px;"> {{ post.affiliations }} </p>
 
 					{% if post.number %}
-					<p class="archive__item-excerpt" itemprop="description" ><i>{{ post.journal }}</i> {{post.issue}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) {{post.page}} </p>
+								<p class="archive__item-excerpt" itemprop="description" ><i>{{ post.journal }}</i> {{post.issue}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) {{post.page}} </p>
 					{% elsif post.issue %}  
-					<p class="archive__item-excerpt" itemprop="description" ><i>{{ post.journal }}</i>, {{post.issue}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) {{post.page}}</p>
+								<p class="archive__item-excerpt" itemprop="description" ><i>{{ post.journal }}</i>, {{post.issue}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) {{post.page}}</p>
 					{% endif %}
 
 					{% if post.type %}
-					<p class="archive__item-excerpt" itemprop="description" style="margin-top: -14px;"> {{post.type}} awarded by {{post.university}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) </p>
+								<p class="archive__item-excerpt" itemprop="description" style="margin-top: -14px;"> {{post.type}} awarded by {{post.university}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) </p>
 					{% endif %}
 
 
 					{% if post.doi %}
-					<p class="archive__item-excerpt" itemprop="description" style="margin-top: -14px;"> DOI: {{post.doi}} </p>
+								<p class="archive__item-excerpt" itemprop="description" style="margin-top: -14px;"> DOI: {{post.doi}} </p>
 					{% endif %}
 
 					{% elsif post.date %}
-					<p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
+								<p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
 					{% endif %}
 
 <!--     {% if post.excerpt and site.read_more != 'enabled' %}
@@ -74,12 +74,12 @@
 			    {% endif %} -->
     
 			    {% if post.citation and post.paperurl %}
-			    <p>Recommended citation: {{ post.citation }} <a href="{{ post.paperurl }}"><u>{{ post.paperurl }}</u></a></p>
+			    			<p>Recommended citation: {{ post.citation }} <a href="{{ post.paperurl }}"><u>{{ post.paperurl }}</u></a></p>
 			    {% elsif post.citation %}
-			    <p>Recommended citation: {{ post.citation }} </p>
+			    			<p>Recommended citation: {{ post.citation }} </p>
 			    {% elsif post.paperurl %}
-			    <p class="archive__item-excerpt" itemprop="description" style="margin-top: -14px;">Download <a href=" {{ post.paperurl }} "><u>here</u></a>.</p>
+			    			<p class="archive__item-excerpt" itemprop="description" style="margin-top: -14px;">Download <a href=" {{ post.paperurl }} "><u>here</u></a>.</p>
 			    {% endif %}
-  
+  {% endif %}
   </article>
 </div>
