@@ -49,9 +49,9 @@
         <p class="page__meta" style="margin-top: -14px;"> {{ post.affiliations }} </p>
 
         {% if post.number %}
-                  <p class="archive__item-excerpt" itemprop="description" style="margin-top: -14px;"><i>{{ post.journal }}</i> {{post.issue}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) {{post.page}} </p>
+                  <p class="archive__item-excerpt" itemprop="description" ><i>{{ post.journal }}</i> {{post.issue}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) {{post.page}} </p>
         {% elsif post.issue %}  
-                 <p class="archive__item-excerpt" itemprop="description" style="margin-top: -14px;"><i>{{ post.journal }}</i>, {{post.issue}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) {{post.page}}</p>
+                 <p class="archive__item-excerpt" itemprop="description" ><i>{{ post.journal }}</i>, {{post.issue}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) {{post.page}}</p>
         {% endif %}
 
 {% if post.type %}
@@ -78,7 +78,7 @@
     {% elsif post.citation %}
       <p>Recommended citation: {{ post.citation }} </p>
     {% elsif post.paperurl %}
-      <p class="archive__item-excerpt" itemprop="description">Download <a href=" {{ post.paperurl }} "><u>here</u></a>.</p>
+      <p class="archive__item-excerpt" itemprop="description" style="margin-top: -14px;">Download <a href=" {{ post.paperurl }} "><u>here</u></a>.</p>
     {% endif %}
 
   </article>
