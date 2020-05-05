@@ -3,7 +3,7 @@ title: "Graduate Teaching Assistant at Imperial College London"
 collection: teaching
 coursetype: "Undergraduate and postgraduate courses"
 permalink: /teaching/2013-imperial-teaching
-teachingvenue: "Imperial College London, UK"
+teachingvenue: "Department of Materials, Imperial College London"
 date: 2013-10-01
 period: "2013 - 2017"
 location: "London, UK"
