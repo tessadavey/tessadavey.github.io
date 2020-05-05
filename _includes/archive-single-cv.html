@@ -43,18 +43,18 @@
        <!--  <p> {{ post.affiliations }} </p> -->
 
         {% if post.number %}
-                  <p><i>{{ post.journal }}</i> {{post.issue}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) {{post.page}} </p>
+                  <p class="archive__item-excerpt" itemprop="description"><i>{{ post.journal }}</i> {{post.issue}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) {{post.page}} </p>
         {% elsif post.issue %}  
-                 <p><i>{{ post.journal }}</i>, {{post.issue}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) {{post.page}}</p>
+                 <p class="archive__item-excerpt" itemprop="description"><i>{{ post.journal }}</i>, {{post.issue}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) {{post.page}}</p>
         {% endif %}
 
 {% if post.type %}
-<p> {{post.type}} awarded by {{post.university}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) </p>
+<p class="archive__item-excerpt" itemprop="description"> {{post.type}} awarded by {{post.university}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) </p>
 {% endif %}
 
 
         {% if post.doi %}
-         <p> DOI: {{post.doi}} </p>
+         <p class="archive__item-excerpt" itemprop="description"> DOI: {{post.doi}} </p>
          {% endif %}
 
         {% elsif post.date %}
