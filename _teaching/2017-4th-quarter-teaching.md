@@ -5,6 +5,7 @@ coursetype: "Undergraduate course"
 permalink: /teaching/2017-4th-quarter-teaching
 teachingvenue: "Tohoku University, School of Engineering"
 date: 2017-11-01
+period: "Annually, 2017 - present"
 location: "Sendai, Japan"
 ---
 
