@@ -35,9 +35,17 @@ layout: default
         {% elsif page.issue %}  
                  <p><i>{{ page.journal }}</i>, {{page.issue}}, {{page.number}} ({{ page.date | default: "1900-01-01" | date: "%Y" }}) {{page.page}}</p>
         {% endif %}
+
+{% if page.type %}
+<p> {{page.type}} awarded by {{page.university}} </p>
+<p> Date awarded: {{page.date}} </p>
+<p> Supervised by: {{page.supervisors}} </p>
+{% endif %}
+
         {% if page.doi %}
          <p> DOI: {{page.doi}} </p>
          {% endif %}
+
 
              {% if page.citation and page.paperurl %}
       <p>Recommended citation: {{ page.citation }} <a href="{{ page.paperurl }}"><u>{{ page.paperurl }}</u></a></p>
