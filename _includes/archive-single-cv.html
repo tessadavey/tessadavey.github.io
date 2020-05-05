@@ -37,6 +37,38 @@
       <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
     {% endif %}
     {% if post.venue%}<p class="archive__item-excerpt" itemprop="description">{{ post.citation }}</p> {% endif %}
+
+ {% if post.collection == 'publications' %}
+        <p> {{ post.authors }} </p>
+        <p> {{ post.affiliations }} </p>
+
+        {% if post.number %}
+                  <p>Published in <i>{{ post.journal }}</i>, {{post.issue}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) {{post.page}} </p>
+        {% elsif post.issue %}  
+                 <p><i>{{ post.journal }}</i>, {{post.issue}}, {{post.number}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) {{post.page}}</p>
+        {% endif %}
+
+{% if post.type %}
+<p> {{post.type}} awarded by {{post.university}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) </p>
+{% endif %}
+
+
+        {% if post.doi %}
+         <p> DOI: {{post.doi}} </p>
+         {% endif %}
+
+        {% elsif post.date %}
+         <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
+        {% endif %}
+ {% if post.citation and post.paperurl %}
+      <p>Recommended citation: {{ post.citation }} <a href="{{ post.paperurl }}"><u>{{ post.paperurl }}</u></a></p>
+    {% elsif post.citation %}
+      <p>Recommended citation: {{ post.citation }} </p>
+    {% elsif post.paperurl %}
+      <p>Download <a href=" {{ post.paperurl }} "><u>here</u></a>.</p>
+    {% endif %}
+
+
     </li>
  </article>
 </div>
