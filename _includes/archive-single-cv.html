@@ -39,7 +39,7 @@
     {% if post.venue%}<p class="archive__item-excerpt" itemprop="description">{{ post.citation }}</p> {% endif %}
 
  {% if post.collection == 'publications' %}
-        <p> {{ post.authors }} </p>
+       <p class="archive__item-excerpt" itemprop="description"> {{ post.authors }} </p>
        <!--  <p> {{ post.affiliations }} </p> -->
 
         {% if post.number %}
