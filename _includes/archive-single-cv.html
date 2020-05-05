@@ -37,6 +37,20 @@
       <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
     {% endif %}
     {% if post.venue%}<p class="archive__item-excerpt" itemprop="description">{{ post.citation }}</p> {% endif %}
+
+    {% elsif post.collection == 'publications' %}
+        <p> {{ post.authors }} </p>
+        <p> {{ post.affiliations }} </p>
+
+        {% if post.number %}
+                  <p>Published in <i>{{ post.journal }}</i>, {{post.issue}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) {{post.page}} </p>
+        {% elsif post.issue %}  
+                 <p><i>{{ post.journal }}</i>, {{post.issue}}, {{post.number}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) {{post.page}}</p>
+        {% endif %}
+        {% if post.doi %}
+         <p> DOI: {{post.doi}} </p>
+         {% endif %}
+         
     </li>
  </article>
 </div>
