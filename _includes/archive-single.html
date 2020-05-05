@@ -53,6 +53,12 @@
         {% elsif post.issue %}  
                  <p><i>{{ post.journal }}</i>, {{post.issue}}, {{post.number}} ({{ post.date | default: "1900-01-01" | date: "%Y" }}) {{post.page}}</p>
         {% endif %}
+
+{% if page.type %}
+<p> {{page.type}} awarded by {{page.university}} ({{ page.date | default: "1900-01-01" | date: %Y" }}) </p>
+{% endif %}
+
+
         {% if post.doi %}
          <p> DOI: {{post.doi}} </p>
          {% endif %}
