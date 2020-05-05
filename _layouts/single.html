@@ -43,14 +43,15 @@ layout: default
 <p> Supervised by: {{page.supervisors}} </p>
 {% endif %}        
 
-{% if page.journal %}
-<p><i class="fa fa-calendar-times" style="padding-right:7.4px"></i>  Date published: {{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }} </p>
-{% endif %}
+
 
         {% if page.doi %}
          <p> DOI: {{page.doi}} </p>
          {% endif %}
 
+{% if page.journal %}
+<p><i class="fa fa-calendar-times" style="padding-right:7.4px"></i>  Date published: {{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }} </p>
+{% endif %}
 
              {% if page.citation and page.paperurl %}
       <p>Recommended citation: {{ page.citation }} <a href="{{ page.paperurl }}"><u>{{ page.paperurl }}</u></a></p>
