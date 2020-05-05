@@ -38,7 +38,7 @@ layout: default
 
 {% if page.type %}
 <p> {{page.type}} awarded by {{page.university}} </p>
-<p> Date awarded: {{page.date}} </p>
+<p> Date awarded: {{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }} </p>
 <p> Supervised by: {{page.supervisors}} </p>
 {% endif %}
 
