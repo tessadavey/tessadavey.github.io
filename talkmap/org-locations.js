@@ -113,5 +113,10 @@ var addressPoints = [
     "Kingston University, London, UK",
     51.4034848,
     -0.3044737
+  ],
+  [
+    "Columbus, OH, USA",
+    39.9622601,
+    -83.0007065
   ]
 ];
