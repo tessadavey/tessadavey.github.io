@@ -1,7 +1,7 @@
 ---
 title: "Graduate Teaching Assistant at Imperial College London"
 collection: teaching
-coursetype: "Undergraduate course"
+coursetype: "Undergraduate and postgraduate courses"
 permalink: /teaching/2013-imperial-teaching
 teachingvenue: "Imperial College London, UK"
 date: 2013-10-01
