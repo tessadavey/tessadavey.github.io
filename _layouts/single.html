@@ -36,10 +36,15 @@ layout: default
                  <p><i>{{ page.journal }}</i>, {{page.issue}}, {{page.number}} ({{ page.date | default: "1900-01-01" | date: "%Y" }}) {{page.page}}</p>
         {% endif %}
 
+
 {% if page.type %}
 <p> {{page.type}} awarded by {{page.university}} </p>
 <p><i class="fa fa-calendar-times" style="padding-right:7.4px"></i>  Date awarded: {{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }} </p>
 <p> Supervised by: {{page.supervisors}} </p>
+{% endif %}        
+
+{% if page.journal %}
+<p><i class="fa fa-calendar-times" style="padding-right:7.4px"></i>  Date published: {{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }} </p>
 {% endif %}
 
         {% if page.doi %}
