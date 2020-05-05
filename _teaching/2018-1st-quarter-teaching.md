@@ -1,5 +1,5 @@
 ---
-title: "Computer Seminar I: C programming"
+title: "Computer Seminar I: Fortran programming"
 collection: teaching
 coursetype: "Undergraduate course"
 permalink: /teaching/2018-1st-quarter-teaching
@@ -11,6 +11,6 @@ location: "Sendai, Japan"
 
 Students are taught basic Fortran structure and syntax, with the aim of creating simple programs, with emphasis on techniques for writing efficient code. They are also given an introduction to parallelisation and high performance computing using the computing cluster at Tohoku University's Cyberscience Center.
 
-* Summer quarter, 2018
-* Summer quarter, 2019
+* Spring quarter, 2018
+* Spring quarter, 2019
 * Summer quarter, 2020
