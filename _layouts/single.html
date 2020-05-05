@@ -30,7 +30,7 @@ layout: default
 
 
           {% if page.collection == 'teaching' %}
-          <p> {{ page.coursetype }}, <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
+          <p> {{ page.coursetype }}, <i>{{ page.teachingvenue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
           {% endif %}
 
  {% if page.authors %}<p><i class="fas fa-users" style="padding-right:0.65px"></i> {{  page.authors }} {% endif %}
