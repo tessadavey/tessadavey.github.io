@@ -8,13 +8,5 @@ date: 2017-11-01
 location: "Sendai, Japan"
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
+In this compulsory second year course, students are taught the basics of programming using C, including using command line tools, and implementing graphics using OpenGL. The overall aim of the course is to create a Car Navigation System, including back-end database of map data, route searching to meet various criteria, and graphical user interface.
 
-Heading 1
-======
-
-Heading 2
-======
-
-Heading 3
-======
