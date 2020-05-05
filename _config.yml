@@ -11,7 +11,7 @@ title                    : "Prof. Tessa Davey"
 title_separator          : "-"
 name                     : &name "Theresa Davey"
 description              : &description "personal description"
-url                      : "https://tessadavey.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://tessadavey.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "tessadavey/tessadavey.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
@@ -85,7 +85,7 @@ author:
   location         : "Sendai, Japan"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : #"http://yourfullgooglescholarurl.com"
+  googlescholar    : "https://scholar.google.com/citations?user=20YXr14AAAAJ"
   email            : 
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
