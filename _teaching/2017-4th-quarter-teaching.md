@@ -3,7 +3,7 @@ title: "Computer Seminar I: C programming"
 collection: teaching
 coursetype: "Undergraduate course"
 permalink: /teaching/2017-4th-quarter-teaching
-teachingvenue: "Tohoku University, School of Engineering"
+teachingvenue: "School of Engineering, Tohoku University"
 date: 2017-11-01
 period: "2017 - present"
 location: "Sendai, Japan"
