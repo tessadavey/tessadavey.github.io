@@ -11,7 +11,7 @@ location: "London, UK"
 
 Giving tutorials, assigning problems, assisting in problem classes, and marking coursework for undergraduates and masters students within the Department of Materials.
 
-Training was provided by the UK's Higher Education Academy with optional qualification (fellowship) introduced in 2017 (tra.ining completed, award not certified before leaving the UK).
+Training was provided by the UK's Higher Education Academy with optional qualification (fellowship) introduced in 2017 (training completed, award not certified before leaving the UK).
 
 Courses taught:
 
