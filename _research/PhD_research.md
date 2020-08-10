@@ -20,7 +20,7 @@ The carbon-zirconium phase diagram has previously been assessed using the CALPHA
 
 <img src='ZrC_Davey2017.png'>
 
-* [1] [Davey T. Thermodynamic assessments of the (Zr, Hf) carbides and borides revisited and informed by the calculation of defect formation energies in ZrC. Imperial College London; 2017.](https://spiral.imperial.ac.uk/handle/10044/1/49433 "PhD thesis")
-* [2] [Fernández Guillermet A. Analysis of thermochemical properties and phase stability in the zirconium-carbon system. J Alloys Compd. 1995;217:69–89.](https://doi.org/10.1016/0925-8388(94)01310-E)
-* [3] [Duff AI, Davey T, Korbmacher D, Glensk A, Grabowski B, Neugebauer J, et al.  Improved method of calculating ab initio high-temperature thermodynamic properties with application to ZrC . Phys Rev B. 2015;91(21):1–21.](http://dx.doi.org/10.1103/PhysRevB.91.214311)
+1. [Davey T. Thermodynamic assessments of the (Zr, Hf) carbides and borides revisited and informed by the calculation of defect formation energies in ZrC. Imperial College London; 2017.](https://spiral.imperial.ac.uk/handle/10044/1/49433 "PhD thesis")
+2. [Fernández Guillermet A. Analysis of thermochemical properties and phase stability in the zirconium-carbon system. J Alloys Compd. 1995;217:69–89.](https://doi.org/10.1016/0925-8388(94)01310-E)
+3. [Duff AI, Davey T, Korbmacher D, Glensk A, Grabowski B, Neugebauer J, et al.  Improved method of calculating ab initio high-temperature thermodynamic properties with application to ZrC . Phys Rev B. 2015;91(21):1–21.](http://dx.doi.org/10.1103/PhysRevB.91.214311)
 
