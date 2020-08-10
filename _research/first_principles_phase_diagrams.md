@@ -15,4 +15,4 @@ This work has been accepted for publication in Calphad [1] – preprint coming s
 Further developments to this method, including extension to other systems and considering magnetic effects and interacting defects, are underway. 
 
 
-1. [Davey T, Tran N-D, Saengdeejing A, Chen Y. First-principles-only CALPHAD phase diagram of the solid aluminium-nickel (Al-Ni) system. Calphad. 2020]
+1. Davey T, Tran N-D, Saengdeejing A, Chen Y. First-principles-only CALPHAD phase diagram of the solid aluminium-nickel (Al-Ni) system. Calphad. 2020
