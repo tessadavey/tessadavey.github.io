@@ -8,7 +8,7 @@ Phase diagrams calculated using the CALPHAD method typically use experimental ph
 
 By making careful consideration of all approximations used in the description, a description of the solid aluminium-nickel system was obtained at a practical application level using only first-principles calculations and obtaining all parameters in the database directly without optimisation considering the known phase diagram. This method makes use of the Bragg-Williams-Gorsky pair approximation for bond energies used within the four substitutional sublattice order-disorder partitional model. Derivations of the necessary models are available [here](http://tessadavey.com/research/order-disorder "Order-disorder models").
 
-This work has been accepted for publication in Calphad [4] – preprint coming soon! 
+This work has been accepted for publication in Calphad [1] – preprint coming soon! 
 
 <img src='AlNi_Davey2020.png'>
 
