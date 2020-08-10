@@ -1,7 +1,7 @@
 ---
 title: "PhD research:  Thermodynamic assessment of the B-C-Hf-Zr system"
 excerpt: "Thermodynamic assessment of the B-C-Hf-Zr system<br/><img src='ZrC_Davey2017.png'>"
-collection: portfolio
+collection: research
 ---
 
 This summarises the research contained within the PhD thesis, Thermodynamic assessments of the (Zr, Hf) carbides and borides revisited and informed by the calculation of defect formation energies in ZrC [1]. 
