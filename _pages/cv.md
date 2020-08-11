@@ -96,10 +96,11 @@ Service and leadership
   * Member of the Strategic Planning and Emergent Opportunities Committee (2015-2019)
   * Member of the Subcommittee on Diversity and Inclusion (2016 - 2018)
   * Secretary of the ACerS UK Chapter (2016-2018)
-  * Chair of the President's Council of Student Advisors (2016 - 2017)
-  * Committee chair of the President's Council of Student Advisors (2015 - 2016)
-  * Member of the President's Council of Student Advisors (2014 - 2015)
-  * Chair of the GGRN Leadership committee (2015-2017)
+  * President's Council of Student Advisors 
+    * Chair (2016-2017)
+    * Committee chair (2015 - 2016)
+    * Member (2014 - 2015)
+  * Chair of the Global Graduate Researcher Network Leadership committee (2015-2017)
   * Member of the Presidential Committee on Social Strategy on Humanitarian Issues (2016-2017)
   * Member of the Educational and Professional Development Council (2016-2017)
   * Engineering Ceramics Division
