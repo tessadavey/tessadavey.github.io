@@ -74,7 +74,43 @@ Teaching
   <ul>{% for post in site.teaching %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
+
+Awards
+======
+* Outstanding Service Award, Imperial College Union, 2012
+* Student presentation award, Nuclear and Environmental Technology Division of the American Ceramic Society, 2016
+* Graduate Excellence in Materials Science (GEMS) Award, Basic Science Division of the American Ceramic Society, 2016
+* Best Graduate Teaching Assistant (nominee), Student Academic Choice Award, Imperial College Union, 2017
+* Global Ambassador Award, American Ceramic Society, 2017
   
 Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* Symposium organisation
+  * ACerS Winter Workshop (2017)
+  * The Future of Materials Science Academia: Preparing for a Career in Higher Education at MRS Fall (2018)
+  * Novel, Green, and Strategic Processing and Manufacturing Technologies at GFMAT-2 (2019)
+  * Global Young Investigator Forum at ICACC (2021)
+  * Advancing the Global Ceramics Community: Fostering Diversity in an Ever-Changing World at PACRIM (2021)
+* American Ceramic Society (ACerS)
+  * Member of the Member Services Committee (2020 - present)
+  * Member of the Strategic Planning and Emergent Opportunities Committee (2015-2019)
+  * Member of the Subcommittee on Diversity and Inclusion (2016 - 2018)
+  * Secretary of the ACerS UK Chapter (2016-2018)
+  * Chair of the President's Council of Student Advisors (2016 - 2017)
+  * Committee chair of the President's Council of Student Advisors (2015 - 2016)
+  * Member of the President's Council of Student Advisors (2014 - 2015)
+  * Chair of the GGRN Leadership committee (2015-2017)
+  * Member of the Presidential Committee on Social Strategy on Humanitarian Issues (2016-2017)
+  * Member of the Educational and Professional Development Council (2016-2017)
+  * Engineering Ceramics Division
+    * Member of the ECD International Committee
+    * Member of the ECD Jubilee Scholars committee
+  * Basic Science Division
+    * Member of the Long Range Planning Committee
+* Materials Research Society (MRS)
+  * Member of the Student Engagement Subcommittee (2019 - present)
+* Imperial College London
+  * PhD representative on the Student-staff committee of the Department of Materials (2014-2017)
+  * MSc representative on the Postgradute committe of the Department of Physics (2012-2013)
+
+
