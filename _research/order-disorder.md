@@ -9,7 +9,7 @@ One tool in the CALPHAD arsenal is the four substitutional sublattice order-diso
 This model can be challenging to understand exactly on a very detailed level. In the general implementation of this method, experimental information describing both the disordered and ordered phases is not available at all temperature. All the parameters are therefore optimised in order to best fit the available data at all points. However, when directly assigning data to both the ordered and disordered phases, for example with first-principles calculations as in [[4]](http://tessadavey.com/research/first_principles_phase_diagrams), this means that a precise understanding of how the parameters in the model are related. A step by step guide to implementing the model is given below. I hope it helps!
 
 *	Implementing the model when only ordered or disordered phase is well known (coming soon). 
-*	Implementing the model when both the ordered and disordered phases are well known. This part was included as a supplementary document in [[4]](http://tessadavey.com/research/first_principles_phase_diagrams). 
+*	[Implementing the model when both the ordered and disordered phases are well known.](http://tessadavey.com/files/Supplementary_orderdisorder.pdf) This part was included as a supplementary document in [[4]](http://tessadavey.com/research/first_principles_phase_diagrams). 
 
 
 
