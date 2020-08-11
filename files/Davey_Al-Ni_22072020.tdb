@@ -1,0 +1,648 @@
+$-------------------------------------------------------------------
+$ Database for Al (A) and Ni (B) 
+$ July 22nd 2020
+$ Theresa Davey
+$ Tohoku University, Japan
+$-------------------------------------------------------------------
+$
+$ Database created using only first-principles calculations 
+$ for solid phases. 
+$
+$ tdb tested with Thermo-Calc v2019a, v2019b.2, 2020a. 
+$
+$ ------------------------------------------------------------------
+ TEMP-LIM 0.01 6000.00 !
+$
+$ ELEMENT NAME  REF. STATE       ATOMIC MASS  H298-H0  S298  !
+$
+ ELEMENT VA     VACUUM           0.0          0.0      0.0   ! 
+ ELEMENT A      A1_FCC           2.6982E+01   0.0      0.0   !
+ ELEMENT B      A1_FCC           5.8690E+01   0.0      0.0   !
+$ ---------------------------------------------------------------------
+$    
+    FUNCTION ZERO      0.01  0;                          6000 N !
+    FUNCTION UN_ASS    0.01  0;                          6000 N !
+    FUNCTION RR         0.01  +8.31451;                  6000 N !
+    FUNCTION TWO       0.01  2;                          6000 N !
+    FUNCTION HALF      0.01  +TWO#**(-1);                6000 N !
+    FUNCTION THREE     0.01  3;                          6000 N !
+    FUNCTION THIRD     0.01  +THREE#**(-1);              6000 N !
+    FUNCTION FOUR      0.01  4;                          6000 N !
+    FUNCTION QUARTER   0.01  +FOUR#**(-1);               6000 N !
+    FUNCTION CHWECH    0.01  6;                          6000 N !
+    FUNCTION SIXTH     0.01  +CHWECH#**(-1);             6000 N !
+    FUNCTION TWELVE    0.01  12;                         6000 N !
+    FUNCTION TWELVTH   0.01  +TWELVE#**(-1);             6000 N !
+    FUNCTION WYTH      0.01  8;                          6000 N !
+    FUNCTION EIGHTH    0.01  +WYTH#**(-1);               6000 N !
+    FUNCTION INV_R     0.01  +RR#**(-1);                 6000 N !
+    FUNCTION TEMP      0.01  +T;                         6000 N !
+    FUNCTION INV_T     0.01  +TEMP#**(-1);               6000 N !
+    FUNCTION INVRT     0.01  +INV_R#*INV_T#;             6000 N !
+    FUNCTION RT        0.01   +RR#*TEMP#;                6000 N !
+$
+$ Some of the number function names are in Welsh, to avoid 
+$ abbreviated names, in case you were wondering!
+$    
+$ ------------------------------------------------
+$ MODEL SPECIFIC PARAMETERS
+$ ------------------------------------------------
+$
+$ DFT DATA - phonons QHA+el for end members
+$          - Debye-Gruneisen model for intermediate disordered
+$          - fitted with quadratics (phonon), linear (Debye)
+$
+$
+$ Absolute enthalpy reference
+
+     FUNCTION ABS_A 0.01 -2.2781257649E-02*T**2 - 1.5135744289E+01*T 
+                           - 3.5770348590E+05; 6000 N 20Dav !
+     FUNCTION ABS_B 0.01 -2.1384589998E-02*T**2 - 1.6241177000E+01*T 
+                           - 5.5374477800E+05; 6000 N 20Dav !
+
+     FUNCTION FCC_A     0.01 +ABS_A#-ABS_B#; 6000 N 20Dav !
+     FUNCTION FCC_B     0.01  0; 6000 N 20Dav !
+
+$ To use SGTE end mmembers instead, use these
+$     FUNCTION FCC_A     0.01  +GHSERAL#; 6000 N 20Dav !
+$     FUNCTION FCC_B     0.01  +GHSERNI#; 6000 N 20Dav !
+
+$------------------------------FCC----------------------------------
+
+$ fcc ORDERED formation energy wrt A1 A and B
+      FUNCTION F_DFTA4   0.01 0; 6000 N 20Dav !
+      FUNCTION  F_DFTA3B  0.01  -20651.11261  
+      + -4.84286685 *T+ 0.001905722 *T**2;  6000 N 20Dav !
+      FUNCTION  F_DFT_AB  0.01  -49111.883    
+      + 0.701122172 *T+ 0.002119445 *T**2;  6000 N 20Dav !
+      FUNCTION  F_DFTAB3  0.01  -41043.64006  
+      + 0.92708567  *T+ 0.00127394  *T**2;  6000 N 20Dav !
+      FUNCTION F_DFTB4   0.01 0; 6000 N 20Dav !
+
+
+$ fcc DISORDERED formation energy wrt A1 A and B
+$ fitted up to 1500K
+ FUNCTION  FR_DFT12 0.01 -11356.58744 + 1.143609189*T; 6000 N 20Dav !
+ FUNCTION  FR_DFT25 0.01 -23198.51318 + 1.709652584*T; 6000 N 20Dav !
+ FUNCTION  FR_DFT37 0.01 -32688.72942 + 1.947579313*T; 6000 N 20Dav !
+ FUNCTION  FR_DFT50 0.01 -41455.38386 + 2.439488999*T; 6000 N 20Dav !
+ FUNCTION  FR_DFT62 0.01 -36650.22126 + 2.156229075*T; 6000 N 20Dav !
+ FUNCTION  FR_DFT75 0.01 -29808.01162 + 1.863502068*T; 6000 N 20Dav !
+ FUNCTION  FR_DFT87 0.01 -16776.68195 + 1.136471076*T; 6000 N 20Dav !
+ 
+
+$------------------------------BCC----------------------------------
+
+$ bcc ORDERED phase energy wrt A1 A and B
+      FUNCTION  BRDFTA4 0.01  10321.21439 + 1.768483635 *T    
+      + 0.005140294 *T**2;  6000 N 20Dav !
+      FUNCTION  BRDFTA3B  0.01  -7909.03939 + -3.952665555  *T
+      + 0.003261355 *T**2;  6000 N 20Dav !
+      FUNCTION  BRDFTB2 0.01  -63131.4441 + 0.373455678 *T    
+      + 0.001592963 *T**2;  6000 N 20Dav !
+      FUNCTION  BRDFTB32  0.01  -32318.32065  -1.699674781*T  
+      + 0.003046206 *T**2;  6000 N 20Dav !
+      FUNCTION  BRDFTAB3  0.01  -36457.61295  -1.458803189*T  
+      + 0.001142942 *T**2;  6000 N 20Dav !
+      FUNCTION  BRDFTB4 0.01  10090.61046 + 0.3234981 *T      
+      + 0.001674413 *T**2;  6000 N 20Dav !
+
+
+$ bcc DISORDERED formation energy wrt A1 A and B
+$ fitted up to 1500K
+ FUNCTION  BR_DFT12 0.01 3720.099704 +-1.575491901 *T; 6000 N 20Dav !
+ FUNCTION  BR_DFT25 0.01 -5761.846638 + 0.253154791*T; 6000 N 20Dav !
+ FUNCTION  BR_DFT37 0.01 -18543.64838 + 1.237790855*T; 6000 N 20Dav !
+ FUNCTION  BR_DFT50 0.01 -23423.16482 + 1.487976042*T; 6000 N 20Dav !
+ FUNCTION  BR_DFT62 0.01 -25562.45046 + 1.752874337*T; 6000 N 20Dav !
+ FUNCTION  BR_DFT75 0.01 -21208.16101 + 1.514818229*T; 6000 N 20Dav !
+ FUNCTION  BR_DFT87 0.01 -8884.045349 + 0.98170291 *T; 6000 N 20Dav !
+
+
+$------------------------------OTHER----------------------------------
+
+$---------D513 wrt A1 A and B-------
+    FUNCTION A_D513  0.01  17121.61815  -3.501168592*T
+    + 0.002186488 *T**2;  6000 N 20Dav !
+    FUNCTION  A3N2D5  0.01  -58466.29765  + 2.230484163 *T
+    + 0.003154391 *T**2;  6000 N 20Dav !
+    FUNCTION  A2N3D5  0.01  -28881.45371  -1.435373768*T
+    + 0.002310491 *T**2;  6000 N 20Dav !
+    FUNCTION  B_D513  0.01  31967.10797  -3.856856033*T
+    -0.000108467  *T**2;  6000 N 20Dav !
+
+$---------D011 wrt A1 A and B-------
+    FUNCTION  I12N4D01  0.01  -38798.38757  + 1.244496002 *T
+    + 0.002916577 *T**2;  6000 N 20Dav !
+
+$---------OC16 wrt A1 A and B-------
+  FUNCTION  A3N5OC  0.01  -54122.93535  + 1.01812718  *T
+  + 0.001868461 *T**2;  6000 N 20Dav ! 
+
+$-------AL4NI3 wrt A1 A and B-------
+  FUNCTION  AL4NI3  0.01  -59816.01294  + 1.291350183 *T
+   + 0.00319353  *T**2;  6000 N 20Dav !
+
+
+$---------------------------------------------------------
+$ FCC MODEL CALCULATIONS
+$---------------------------------------------------------
+
+$ Interaction coefficients (disordered phase)
+$ obtained via DISORDERED PHASE (SQS at x=12,25,37,5,50,62.5,75,87%)
+
+$ Fitted directly to x=0.875,0.75,0.625 data
+
+   FUNCTION F_LDIS0 0.01  +9.14290*FR_DFT87#
+                          -16.0000*FR_DFT75#
+                          +12.8000*FR_DFT62#; 6000 N  20Dav !
+   FUNCTION F_LDIS1 0.01  +54.8571*FR_DFT87#
+                          -85.3333*FR_DFT75#
+                          +42.6667*FR_DFT62#; 6000 N  20Dav !
+   FUNCTION F_LDIS2 0.01  +73.1429*FR_DFT87#
+                          -85.3333*FR_DFT75#
+                          +34.1333*FR_DFT62#; 6000 N  20Dav ! 
+   FUNCTION F_LDIS3 0.01 0;                 6000 N  20Dav !   
+   FUNCTION F_LDIS4 0.01 0;                 6000 N  20Dav !   
+   FUNCTION F_LDIS5 0.01 0;                 6000 N  20Dav !   
+   FUNCTION F_LDIS6 0.01 0;                 6000 N  20Dav !
+
+$----------------------------------------------------------
+
+
+$ Energy of the disordered phase at x=0.25, 0.5, 0.75
+$ Reassembled from interaction parameters
+   FUNCTION R_DISA3B 0.01 +0.75*A1_A4#+0.25*A1_B4#
+                             +0.1875*F_LDIS0#
+                             +0.09375*F_LDIS1#
+                             +0.046875*F_LDIS2#
+                             +0.0234375*F_LDIS3#
+                             +0.01171875*F_LDIS4#
+                             +0.00585938*F_LDIS5#
+                             +0.00292969*F_LDIS6#; 6000 N !
+   FUNCTION R_DIS_AB 0.01 +0.5*A1_A4#+0.5*A1_B4#
+                             +0.25*F_LDIS0#; 6000 N !
+   FUNCTION R_DISAB3 0.01 +0.25*A1_A4#+0.75*A1_B4#
+                             +0.1875*F_LDIS0#
+                             -0.09375*F_LDIS1#
+                             +0.046875*F_LDIS2#
+                             -0.0234375*F_LDIS3#
+                             +0.01171875*F_LDIS4#
+                             -0.00585938*F_LDIS5#
+                             +0.00292969*F_LDIS6#; 6000 N !             
+
+        
+$ Difference between the ordered and disordered at each composition
+     FUNCTION F_DA3B  0.01 F_DFTA3B# - R_DISA3B#; 6000 N !
+     FUNCTION F_D_AB  0.01 F_DFT_AB# - R_DIS_AB#; 6000 N !
+     FUNCTION F_DAB3  0.01 F_DFTAB3# - R_DISAB3#; 6000 N !
+
+$ 4SL parameters
+$ Obtained directly from ordered and disordered energies
+$ Coefficients from inverted matrix as 20Dav
+$ LABAB=uAB case
+ FUNCTION A1_A4    0.01 0;    6000 N 20Dav !
+ FUNCTION L12_A3B  0.01 +2.56623*F_DA3B#+1.75325*F_D_AB#+0.96623*F_DAB3#; 
+                              6000 N 20Dav !
+ FUNCTION L10_A2B2 0.01 +1.66234*F_DA3B#+3.53247*F_D_AB#+1.66234*F_DAB3#; 
+                              6000 N 20Dav !
+ FUNCTION L12_AB3  0.01 +0.96623*F_DA3B#+1.75325*F_D_AB#+2.56623*F_DAB3#; 
+                              6000 N 20Dav !
+ FUNCTION A1_B4    0.01 0;    6000 N 20Dav !
+
+$ Kusoffsky prototype values
+      FUNCTION F_UAB   0.01 +QUARTER#*L10_A2B2#-EIGHTH#*A1_A4#
+                            -EIGHTH#*A1_B4#;        
+                                                    6000 N 01Kus !
+      FUNCTION F_ALPHA 0.01 +THIRD#*L12_A3B#-QUARTER#*L10_A2B2#
+                      -THREE#*EIGHTH#*A1_A4#+EIGHTH#*A1_B4#;        
+                                                    6000 N 01Kus !
+      FUNCTION F_BETA 0.01 +THIRD#*L12_AB3#-QUARTER#*L10_A2B2#
+                            +EIGHTH#*A1_A4#-3*EIGHTH#*A1_B4#;        
+                                                    6000 N 01Kus !
+
+
+$ Interaction parameters (4SL)
+      FUNCTION F_LABAB 0.01 +F_UAB#;                6000 N 01Kus !
+      FUNCTION F_L0AB  0.01 0;                      6000 N 01Kus !
+      FUNCTION F_L1AB  0.01 0;                      6000 N 01Kus !
+
+
+$--------------------------------------------------------
+$ BCC MODEL CALCULATIONS
+$---------------------------------------------------------
+$ 
+$ Adjust reference state to A2 A and B
+ FUNCTION B_DFTA4   0.01 BRDFTA4# -BRDFTA4#;                    6000 N !
+ FUNCTION B_DFTA3B  0.01 BRDFTA3B#-0.75*BRDFTA4#-0.25*BRDFTB4#; 6000 N !
+ FUNCTION B_DFTB2   0.01 BRDFTB2# -0.5*BRDFTA4#-0.5*BRDFTB4#;   6000 N !  
+ FUNCTION B_DFTB32  0.01 BRDFTB32#-0.5*BRDFTA4#-0.5*BRDFTB4#;   6000 N !  
+ FUNCTION B_DFTAB3  0.01 BRDFTAB3#-0.25*BRDFTA4#-0.75*BRDFTB4#; 6000 N !
+ FUNCTION B_DFTB4   0.01 BRDFTB4# -BRDFTB4#;                    6000 N !
+
+ 
+ FUNCTION B_DFT12 0.01 BR_DFT12#-0.875*BRDFTA4#-0.125*BRDFTB4#; 6000 N !
+ FUNCTION B_DFT25 0.01 BR_DFT25# -0.75*BRDFTA4# -0.25*BRDFTB4#; 6000 N !
+ FUNCTION B_DFT37 0.01 BR_DFT37#-0.625*BRDFTA4#-0.375*BRDFTB4#; 6000 N !
+ FUNCTION B_DFT50 0.01 BR_DFT50#  -0.5*BRDFTA4#  -0.5*BRDFTB4#; 6000 N !
+ FUNCTION B_DFT62 0.01 BR_DFT62#-0.375*BRDFTA4#-0.625*BRDFTB4#; 6000 N !
+ FUNCTION B_DFT75 0.01 BR_DFT75# -0.25*BRDFTA4# -0.75*BRDFTB4#; 6000 N !
+ FUNCTION B_DFT87 0.01 BR_DFT87#-0.125*BRDFTA4#-0.875*BRDFTB4#; 6000 N !
+
+  
+$ Interaction parameters (disordered phase)
+$ obtained via DISORDERED PHASE (SQS at x=12,25,37,5,50,62.5,75,87%)  
+$----------------------------------------------------------
+$ Fitted directly to x=0.25,0.5,0.75 data
+
+   FUNCTION B_LDIS0 0.01  +4.0000*B_DFT50#; 6000 N  20Dav !
+   FUNCTION B_LDIS1 0.01  +5.3333*B_DFT25#
+                          -5.3333*B_DFT75#; 6000 N  20Dav ! 
+   FUNCTION B_LDIS2 0.01 +10.6667*B_DFT25# 
+                         -16.0000*B_DFT50#
+                         +10.6667*B_DFT75#; 6000 N  20Dav !   
+   FUNCTION B_LDIS3 0.01 0;                 6000 N  20Dav !   
+   FUNCTION B_LDIS4 0.01 0;                 6000 N  20Dav !   
+   FUNCTION B_LDIS5 0.01 0;                 6000 N  20Dav !   
+   FUNCTION B_LDIS6 0.01 0;                 6000 N  20Dav !  
+$----------------------------------------------------------
+
+$ Excess energy of the disordered phase at x=0.25, 0.5, 0.75
+$ Assembled from interaction parameters
+   FUNCTION B_DISA3B 0.01  +0.1875*B_LDIS0#
+                             +0.09375*B_LDIS1#
+                             +0.046875*B_LDIS2#
+                             +0.0234375*B_LDIS3#
+                             +0.01171875*B_LDIS4#
+                             +0.00585938*B_LDIS5#
+                             +0.00292969*B_LDIS6#; 6000 N !
+   FUNCTION B_DIS_AB 0.01 +0.25*B_LDIS0#; 6000 N !
+   FUNCTION B_DISAB3 0.01 +0.1875*B_LDIS0#
+                             -0.09375*B_LDIS1#
+                             +0.046875*B_LDIS2#
+                             -0.0234375*B_LDIS3#
+                             +0.01171875*B_LDIS4#
+                             -0.00585938*B_LDIS5#
+                             +0.00292969*B_LDIS6#; 6000 N !    
+
+
+$ Difference between the ordered and disordered for each compound
+     FUNCTION B_DA3B  0.01 B_DFTA3B# - B_DISA3B#; 6000 N !
+     FUNCTION B_D_B2  0.01 B_DFTB2# -  B_DIS_AB#; 6000 N !
+     FUNCTION B_DB32  0.01 B_DFTB32# - B_DIS_AB#; 6000 N !
+     FUNCTION B_DAB3  0.01 B_DFTAB3# - B_DISAB3#; 6000 N !
+
+
+$ 4SL parameters
+$ Obtained directly from ordered and disordered energies
+$ Coefficients from inverted matrix as 20Dav
+  FUNCTION A2_A4     0.01 0;                       6000 N 20Dav !
+  FUNCTION D03_A3B   0.01 +2.1793*B_DA3B#+0.3103*B_D_B2#
+                   +0.6207*B_DB32#+0.5793*B_DAB3#; 6000 N 20Dav !
+  FUNCTION B2_A2B2   0.01 +1.1034*B_DA3B#+1.4483*B_D_B2#
+                   +0.8966*B_DB32#+1.1034*B_DAB3#; 6000 N 20Dav !
+  FUNCTION B32A2B2   0.01 +1.1034*B_DA3B#+0.4483*B_D_B2#
+                   +1.8966*B_DB32#+1.1034*B_DAB3#; 6000 N 20Dav !
+  FUNCTION D03_AB3   0.01 +0.5793*B_DA3B#+0.3103*B_D_B2#
+                   +0.6207*B_DB32#+2.1793*B_DAB3#; 6000 N 20Dav !
+  FUNCTION A2_B4     0.01 0;                       6000 N 20Dav !
+
+
+
+$ Abe prototype values (not used)
+      FUNCTION B_UAB   0.01 +QUARTER#*B2_A2B2#;  6000 N 14Abe !
+      FUNCTION B_VAB   0.01 +THIRD#*B32A2B2#-SIXTH#*B2_A2B2#; 
+                                                 6000 N 14Abe !
+
+      FUNCTION INV_BUAB 0.01 +0.25*B_UAB#**(-1); 6000 N 14Abe !
+      FUNCTION SQ_BVAB  0.01 3*B_VAB#*B_VAB#;    6000 N 14Abe !
+
+$ Interaction parameters (follwing Lindahl et al.)
+      FUNCTION B_L1NN 0.01 0; 6000 N 15Lin !
+      FUNCTION B_L2NN 0.01 0; 6000 N 15Lin !
+
+$---------------------------------------------------------------
+$
+$ D513 MODEL PARAMETERS
+$---------------------------------------------------
+ FUNCTION L5_D513 0.01 +A3N2D5#-0.6*A_D513#-0.4*B_D513#;  6000 N 20Dav !
+ FUNCTION L52_D513 0.01 +A2N3D5#-0.6*A_D513#-0.4*B_D513#; 6000 N 20Dav !
+ FUNCTION L_D513_A  0.01 0.2*L5_D513#;                    6000 N 20Dav !
+ FUNCTION L_D513_B  0.01 0.2*L52_D513#;                   6000 N 20Dav !
+$---------------------------------------------------------------
+
+$----------------------------------------------------------------
+$-----------------------------------------
+$ PHASE PARAMETERS
+$-----------------------------------------
+
+$ Phase definitions
+$
+ DEFINE-SYSTEM-DEFAULT ELEMENT 2 !
+ TYPE-DEF % SEQ * !
+
+
+$-----------------------------------------------------------------
+$
+$ FCC A1
+$ Disordered part of FCC_4SL
+$
+ PHASE A1_FCC % 1 1 !
+ CONST A1_FCC : A B : !
+$
+$
+$
+$ DISORDERED FCC END MEMBERS
+   PARAMETER  G(A1_FCC,A;0) 0.01  +A1_A4#+FCC_A#;      6000 N 20Dav ! 
+   PARAMETER  G(A1_FCC,B;0) 0.01  +A1_B4#+FCC_B#;      6000 N 20Dav !   
+
+$ DISORDERED FCC INTERACTION TERMS
+   PARAMETER L(A1_FCC,A,B;0)  0.01  F_LDIS0#;          6000 N 20Dav !   
+   PARAMETER L(A1_FCC,A,B;1)  0.01  F_LDIS1#;          6000 N 20Dav !   
+   PARAMETER L(A1_FCC,A,B;2)  0.01  F_LDIS2#;          6000 N 20Dav !   
+   PARAMETER L(A1_FCC,A,B;3)  0.01  F_LDIS3#;          6000 N 20Dav !   
+   PARAMETER L(A1_FCC,A,B;4)  0.01  F_LDIS4#;          6000 N 20Dav !  
+   PARAMETER L(A1_FCC,A,B;5)  0.01  F_LDIS5#;          6000 N 20Dav ! 
+   PARAMETER L(A1_FCC,A,B;6)  0.01  F_LDIS6#;          6000 N 20Dav ! 
+
+ TYPE-DEF Z GES AMEND_PHASE_DESCRIPTION FCC_4SL DIS_PART A1_FCC !   
+ 
+ PHASE FCC_4SL %Z 4 0.25 0.25 0.25 0.25 !
+ CONST FCC_4SL : A B : A B : A B : A B :  !
+
+$ Z: This phase has a disordered contribution from A1_FCC    
+
+$ ORDERED FCC END MEMBERS 
+   PARAMETER G(FCC_4SL,A:A:A:A;0)  0.01  A1_A4#   ;    6000 N 20Dav ! 
+
+   PARAMETER G(FCC_4SL,A:A:A:B;0)  0.01  L12_A3B# ;    6000 N 20Dav !  
+   PARAMETER G(FCC_4SL,A:A:B:A;0)  0.01  L12_A3B# ;    6000 N 20Dav !
+   PARAMETER G(FCC_4SL,A:B:A:A;0)  0.01  L12_A3B# ;    6000 N 20Dav !
+   PARAMETER G(FCC_4SL,B:A:A:A;0)  0.01  L12_A3B# ;    6000 N 20Dav !
+
+   PARAMETER G(FCC_4SL,A:A:B:B;0)  0.01  L10_A2B2#;    6000 N 20Dav ! 
+   PARAMETER G(FCC_4SL,A:B:A:B;0)  0.01  L10_A2B2#;    6000 N 20Dav ! 
+   PARAMETER G(FCC_4SL,A:B:B:A;0)  0.01  L10_A2B2#;    6000 N 20Dav ! 
+   PARAMETER G(FCC_4SL,B:A:A:B;0)  0.01  L10_A2B2#;    6000 N 20Dav ! 
+   PARAMETER G(FCC_4SL,B:A:B:A;0)  0.01  L10_A2B2#;    6000 N 20Dav ! 
+   PARAMETER G(FCC_4SL,B:B:A:A;0)  0.01  L10_A2B2#;    6000 N 20Dav ! 
+
+   PARAMETER G(FCC_4SL,A:B:B:B;0)  0.01  L12_AB3# ;    6000 N 20Dav ! 
+   PARAMETER G(FCC_4SL,B:A:B:B;0)  0.01  L12_AB3# ;    6000 N 20Dav !
+   PARAMETER G(FCC_4SL,B:B:A:B;0)  0.01  L12_AB3# ;    6000 N 20Dav !
+   PARAMETER G(FCC_4SL,B:B:B:A;0)  0.01  L12_AB3# ;    6000 N 20Dav !
+
+   PARAMETER G(FCC_4SL,B:B:B:B;0)  0.01  A1_B4#   ;    6000 N 20Dav !
+
+$ ORDERED FCC INTERACTION TERMS
+
+   PARAMETER L(FCC_4SL,A,B:A,B:A:A;0)  0.01 +F_LABAB#; 6000 N 20Dav ! 
+   PARAMETER L(FCC_4SL,A,B:A,B:A:B;0)  0.01 +F_LABAB#; 6000 N 20Dav ! 
+   PARAMETER L(FCC_4SL,A,B:A,B:B:A;0)  0.01 +F_LABAB#; 6000 N 20Dav ! 
+   PARAMETER L(FCC_4SL,A,B:A,B:B:B;0)  0.01 +F_LABAB#; 6000 N 20Dav ! 
+
+   PARAMETER L(FCC_4SL,A,B:A:A,B:A;0)  0.01 +F_LABAB#; 6000 N 20Dav ! 
+   PARAMETER L(FCC_4SL,A,B:A:A,B:B;0)  0.01 +F_LABAB#; 6000 N 20Dav ! 
+   PARAMETER L(FCC_4SL,A,B:B:A,B:A;0)  0.01 +F_LABAB#; 6000 N 20Dav ! 
+   PARAMETER L(FCC_4SL,A,B:B:A,B:B;0)  0.01 +F_LABAB#; 6000 N 20Dav ! 
+
+   PARAMETER L(FCC_4SL,A,B:A:A:A,B;0)  0.01 +F_LABAB#; 6000 N 20Dav ! 
+   PARAMETER L(FCC_4SL,A,B:A:B:A,B;0)  0.01 +F_LABAB#; 6000 N 20Dav ! 
+   PARAMETER L(FCC_4SL,A,B:B:A:A,B;0)  0.01 +F_LABAB#; 6000 N 20Dav ! 
+   PARAMETER L(FCC_4SL,A,B:B:B:A,B;0)  0.01 +F_LABAB#; 6000 N 20Dav ! 
+
+   PARAMETER L(FCC_4SL,A:A,B:A,B:A;0)  0.01 +F_LABAB#; 6000 N 20Dav ! 
+   PARAMETER L(FCC_4SL,A:A,B:A,B:B;0)  0.01 +F_LABAB#; 6000 N 20Dav ! 
+   PARAMETER L(FCC_4SL,B:A,B:A,B:A;0)  0.01 +F_LABAB#; 6000 N 20Dav ! 
+   PARAMETER L(FCC_4SL,B:A,B:A,B:B;0)  0.01 +F_LABAB#; 6000 N 20Dav ! 
+
+   PARAMETER L(FCC_4SL,A:A,B:A:A,B;0)  0.01 +F_LABAB#; 6000 N 20Dav ! 
+   PARAMETER L(FCC_4SL,A:A,B:B:A,B;0)  0.01 +F_LABAB#; 6000 N 20Dav ! 
+   PARAMETER L(FCC_4SL,B:A,B:A:A,B;0)  0.01 +F_LABAB#; 6000 N 20Dav ! 
+   PARAMETER L(FCC_4SL,B:A,B:B:A,B;0)  0.01 +F_LABAB#; 6000 N 20Dav ! 
+
+   PARAMETER L(FCC_4SL,A:A:A,B:A,B;0)  0.01 +F_LABAB#; 6000 N 20Dav ! 
+   PARAMETER L(FCC_4SL,A:B:A,B:A,B;0)  0.01 +F_LABAB#; 6000 N 20Dav ! 
+   PARAMETER L(FCC_4SL,B:A:A,B:A,B;0)  0.01 +F_LABAB#; 6000 N 20Dav ! 
+   PARAMETER L(FCC_4SL,B:B:A,B:A,B;0)  0.01 +F_LABAB#; 6000 N 20Dav ! 
+
+
+
+$-----------------------------------------------------------------
+$
+$ BCC A2
+$ Disordered part of BCC_4SL
+$
+ PHASE A2_BCC % 1 1 !
+ CONST A2_BCC : A B : !
+
+$ DISORDERED BCC END MEMBERS
+ PARAMETER  G(A2_BCC,A;0) 0.01 +A2_A4#+BRDFTA4#+FCC_A#; 6000 N 20Dav ! 
+ PARAMETER  G(A2_BCC,B;0) 0.01 +A2_B4#+BRDFTB4#+FCC_B#; 6000 N 20Dav !   
+
+$ DISORDERED BCC INTERACTION TERMS
+$ Fitted to SQS data 
+   PARAMETER L(A2_BCC,A,B;0)  0.01  B_LDIS0#;           6000 N 20Dav !   
+   PARAMETER L(A2_BCC,A,B;1)  0.01  B_LDIS1#;           6000 N 20Dav !   
+   PARAMETER L(A2_BCC,A,B;2)  0.01  B_LDIS2#;           6000 N 20Dav !   
+   PARAMETER L(A2_BCC,A,B;3)  0.01  B_LDIS3#;           6000 N 20Dav !   
+   PARAMETER L(A2_BCC,A,B;4)  0.01  B_LDIS4#;           6000 N 20Dav !   
+   PARAMETER L(A2_BCC,A,B;5)  0.01  B_LDIS5#;           6000 N 20Dav ! 
+   PARAMETER L(A2_BCC,A,B;6)  0.01  B_LDIS6#;           6000 N 20Dav ! 
+$
+$
+  TYPE-DEF Y GES AMEND_PHASE_DESCRIPTION BCC_4SL DIS_PART A2_BCC !   
+ 
+ PHASE BCC_4SL %Y 4 0.25 0.25 0.25 0.25 !
+ CONST BCC_4SL : A B : A B : A B : A B :  !
+
+$ Y: This phase has a disordered contribution from A2_BCC     
+
+$ ORDERED BCC END MEMBERS 
+   PARAMETER G(BCC_4SL,A:A:A:A;0)  0.01  A2_A4#;        6000 N 20Dav !   
+
+   PARAMETER G(BCC_4SL,A:A:A:B;0)  0.01  D03_A3B#;      6000 N 20Dav !   
+   PARAMETER G(BCC_4SL,A:A:B:A;0)  0.01  D03_A3B#;      6000 N 20Dav !
+   PARAMETER G(BCC_4SL,A:B:A:A;0)  0.01  D03_A3B#;      6000 N 20Dav !
+   PARAMETER G(BCC_4SL,B:A:A:A;0)  0.01  D03_A3B#;      6000 N 20Dav !
+
+   PARAMETER G(BCC_4SL,A:A:B:B;0)  0.01  B2_A2B2#;      6000 N 20Dav ! 
+   PARAMETER G(BCC_4SL,B:B:A:A;0)  0.01  B2_A2B2#;      6000 N 20Dav !
+
+   PARAMETER G(BCC_4SL,A:B:A:B;0)  0.01  B32A2B2#;      6000 N 20Dav ! 
+   PARAMETER G(BCC_4SL,A:B:B:A;0)  0.01  B32A2B2#;      6000 N 20Dav ! 
+   PARAMETER G(BCC_4SL,B:A:A:B;0)  0.01  B32A2B2#;      6000 N 20Dav ! 
+   PARAMETER G(BCC_4SL,B:A:B:A;0)  0.01  B32A2B2#;      6000 N 20Dav ! 
+
+   PARAMETER G(BCC_4SL,A:B:B:B;0)  0.01  D03_AB3#;      6000 N 20Dav ! 
+   PARAMETER G(BCC_4SL,B:A:B:B;0)  0.01  D03_AB3#;      6000 N 20Dav ! 
+   PARAMETER G(BCC_4SL,B:B:A:B;0)  0.01  D03_AB3#;      6000 N 20Dav ! 
+   PARAMETER G(BCC_4SL,B:B:B:A;0)  0.01  D03_AB3#;      6000 N 20Dav ! 
+
+   PARAMETER G(BCC_4SL,B:B:B:B;0)  0.01  A2_B4#;        6000 N 20Dav !
+
+$ ORDERED BCC INTERACTION TERMS
+
+   PARAMETER L(BCC_4SL,A,B:A:A,B:A;0)  0.01  B_L1NN;    6000 N 20Dav ! 
+   PARAMETER L(BCC_4SL,A,B:A:A,B:B;0)  0.01  B_L1NN;    6000 N 20Dav ! 
+   PARAMETER L(BCC_4SL,A,B:B:A,B:A;0)  0.01  B_L1NN;    6000 N 20Dav ! 
+   PARAMETER L(BCC_4SL,A,B:B:A,B:B;0)  0.01  B_L1NN;    6000 N 20Dav ! 
+
+   PARAMETER L(BCC_4SL,A,B:A:A:A,B;0)  0.01  B_L1NN;    6000 N 20Dav ! 
+   PARAMETER L(BCC_4SL,A,B:A:B:A,B;0)  0.01  B_L1NN;    6000 N 20Dav !
+   PARAMETER L(BCC_4SL,A,B:B:A:A,B;0)  0.01  B_L1NN;    6000 N 20Dav !
+   PARAMETER L(BCC_4SL,A,B:B:B:A,B;0)  0.01  B_L1NN;    6000 N 20Dav !
+
+   PARAMETER L(BCC_4SL,A:A,B:A,B:A;0)  0.01  B_L1NN;    6000 N 20Dav !
+   PARAMETER L(BCC_4SL,A:A,B:A,B:B;0)  0.01  B_L1NN;    6000 N 20Dav ! 
+   PARAMETER L(BCC_4SL,B:A,B:A,B:A;0)  0.01  B_L1NN;    6000 N 20Dav ! 
+   PARAMETER L(BCC_4SL,B:A,B:A,B:B;0)  0.01  B_L1NN;    6000 N 20Dav ! 
+
+   PARAMETER L(BCC_4SL,A:A,B:A:A,B;0)  0.01  B_L1NN;    6000 N 20Dav ! 
+   PARAMETER L(BCC_4SL,A:A,B:B:A,B;0)  0.01  B_L1NN;    6000 N 20Dav !
+   PARAMETER L(BCC_4SL,B:A,B:A:A,B;0)  0.01  B_L1NN;    6000 N 20Dav !
+   PARAMETER L(BCC_4SL,B:A,B:B:A,B;0)  0.01  B_L1NN;    6000 N 20Dav !
+
+
+   PARAMETER L(BCC_4SL,A,B:A,B:A:A;0)  0.01  B_L2NN;    6000 N 20Dav !
+   PARAMETER L(BCC_4SL,A,B:A,B:A:B;0)  0.01  B_L2NN;    6000 N 20Dav !
+   PARAMETER L(BCC_4SL,A,B:A,B:B:A;0)  0.01  B_L2NN;    6000 N 20Dav !
+   PARAMETER L(BCC_4SL,A,B:A,B:B:B;0)  0.01  B_L2NN;    6000 N 20Dav !
+
+   PARAMETER L(BCC_4SL,A:A:A,B:A,B;0)  0.01  B_L2NN;    6000 N 20Dav !
+   PARAMETER L(BCC_4SL,A:B:A,B:A,B;0)  0.01  B_L2NN;    6000 N 20Dav !
+   PARAMETER L(BCC_4SL,B:A:A,B:A,B;0)  0.01  B_L2NN;    6000 N 20Dav !
+   PARAMETER L(BCC_4SL,B:B:A,B:A,B;0)  0.01  B_L2NN;    6000 N 20Dav !
+
+$----------------------------------------------------------
+$ D513
+$
+ PHASE D513 % 2 0.6 0.4 !
+ CONST D513 : A B : A B : !
+
+  PARAMETER G(D513,A:B;0) 0.01   A3N2D5#+0.6*FCC_A#+0.4*FCC_B#; 
+                                                        6000 N 20Dav !
+  PARAMETER G(D513,B:A;0) 0.01   A2N3D5#+0.4*FCC_A#+0.6*FCC_B#; 
+                                                        6000 N 20Dav !
+
+  
+  PARAMETER G(D513,A:A;0) 0.01   A_D513#+FCC_A#;        6000 N 20Dav !
+  PARAMETER G(D513,B:B;0) 0.01   B_D513#+FCC_B#;        6000 N 20Dav !
+
+  PARAMETER L(D513,A,B:A;0) 0.01 +L_D513_B#;            6000 N 20Dav !
+  PARAMETER L(D513,A,B:B;0) 0.01 +L_D513_A#;            6000 N 20Dav !
+  PARAMETER L(D513,A:A,B;0) 0.01 +L_D513_A#;            6000 N 20Dav !
+  PARAMETER L(D513,B:A,B;0) 0.01 +L_D513_B#;            6000 N 20Dav !
+
+
+$----------------------------------------------------------
+
+$ D011
+$
+ PHASE D011 % 2 12 4 !
+ CONST D011 : A  : B : !
+
+  PARAMETER G(D011,A:B;0) 0.01   +16*I12N4D01#+12*FCC_A#+4*FCC_B#; 
+                                                        6000 N 20Dav !
+
+
+$ OC16
+$
+ PHASE OC16 % 2 3 5 !
+ CONST OC16 : A : B : !
+
+  PARAMETER G(OC16,A:B;0) 0.01   +8*A3N5OC#+3*FCC_A#+5*FCC_B#; 
+                                                        6000 N 20Dav !
+
+
+$ A4B3
+$
+ PHASE A4B3 % 2 4 3 !
+ CONST A4B3 : A : B : !
+
+  PARAMETER G(A4B3,A:B;0) 0.01   +7*AL4NI3#+4*FCC_A#+3*FCC_B#; 
+                                                        6000 N 20Dav !
+
+$----------------------------------------------------------
+
+$ liquid (borrowed from 97Ans/01Dup, Reference to SGTE)
+ PHASE LIQUID:L % 1 1 !
+ CONST LIQUID:L : A B : !
+
+$ SGTE liquid phase references are adjusted to be consistent with 
+$ calculated fcc Al and Ni
+
+  FUNCTION GHSERAL 298.15
+ -7976.15+137.093038*T-24.3671976*T*LN(T)-1.884662E-3*T**2-0.877664E-6*T**3
+ +74092*T**(-1); 700 Y
+ -11276.24+223.048446*T-38.5844296*T*LN(T)+18.531982E-3*T**2-5.764227E-6*T**3
+ +74092*T**(-1); 933.473 Y
+ -11278.361+188.684136*T-31.748192*T*LN(T)-1230.622E25*T**(-9); 6000 N SGTE !
+
+ FUNCTION GLIQAL 298.15 11005.045-11.84185*T+79.337E-21*T**7+GHSERAL; 
+ 933.473 Y
+  -795.991+177.430209*T-31.748192*T*LN(T); 6000 N SGTE !
+
+$ Include nickel magnetic contribution from SGTE
+$ Analytically evaluate IHJ model
+  FUNCTION MAGNI_P 0.01 0.28; 6000 N !
+  FUNCTION MAGNI_IP 0.01 MAGNI_P**(-1)-1; 6000 N !
+  FUNCTION INV1125 0.01 0.000888888888889; 6000 N !
+  FUNCTION MAGNI_A1 0.01 518*INV1125; 6000 N !
+  FUNCTION INV15975 0.01 0.000062597809077; 6000 N !
+  FUNCTION MAGNI_A2 0.01 11692*INV15975; 6000 N !
+  FUNCTION MAGNI_AT 0.01 MAGNI_A1+MAGNI_A2*MAGNI_IP; 6000 N !
+  FUNCTION MAGNI_TC 0.01 633; 6000 N !
+  FUNCTION MAGNI_TU 0.01 TEMP*MAGNI_TC**(-1); 6000 N !
+
+  FUNCTION MAGNI_IA 0.01 MAGNI_A1**(-1); 6000 N !
+  FUNCTION MAGN_G11 0.01 1; 6000 N !
+  FUNCTION MAGN_IAP 0.01 MAGNI_IA*MAGNI_P**(-1); 6000 N !
+  FUNCTION MAGN_IAQ 0.01 MAGNI_IA*MAGNI_IP; 6000 N !
+  FUNCTION MAGN_G12 0.01 -0.564286*MAGN_IAP*MAGNI_TU**(-1); 6000 N !
+  FUNCTION MAGN_G13 0.01 -0.1589537*MAGN_IAQ*MAGNI_TU**3; 6000 N !
+  FUNCTION MAGN_G14 0.01 -0.0070646*MAGN_IAQ*MAGNI_TU**9; 6000 N !
+  FUNCTION MAGN_G15 0.01 -0.0015895*MAGN_IAQ*MAGNI_TU**15; 6000 N !
+  FUNCTION MAGN_G21 0.01 -0.1*MAGNI_IA*MAGNI_TU**(-5); 6000 N !
+  FUNCTION MAGN_G22 0.01 -0.0031746*MAGNI_IA*MAGNI_TU**(-15); 6000 N !
+  FUNCTION MAGN_G23 0.01 -0.0006667*MAGNI_IA*MAGNI_TU**(-25); 6000 N !
+
+  FUNCTION MAGNI_G 0.01 MAGN_G11+MAGN_G12+MAGN_G13+MAGN_G14+MAGN_G15; 633 Y
+                        MAGN_G21+MAGN_G22+MAGN_G23; 6000 N !
+  FUNCTION MAGNI_BS 0.01 0.52; 6000 N !
+  FUNCTION MAGNI_LN 0.01 LN(1.52); 6000 N !
+  FUNCTION MAG_RT 0.01 RR*TEMP; 6000 N !
+
+  FUNCTION GMAGNI 298.15 0.41871*MAG_RT*MAGNI_G; 6000 N SGTE !
+
+   FUNCTION GHSERNI  298.15
+ -5179.159+117.854*T-22.096*T*LN(T)-4.8407E-3*T**2;  1728.00 Y
+ -27840.620+279.134977*T-43.1*T*LN(T)+1127.54E28*T**(-9);  6000.00 N SGTE !
+
+   FUNCTION GLIQNI 298.15 16414.686-9.397*T-382.318E-23*T**7+GHSERNI; 1728 Y
+ -9549.817+268.597977*T-43.1*T*LN(T); 6000 N SGTE !
+
+
+ PARAMETER G(LIQUID,A;0) 0.01 +GLIQAL#-GHSERAL#+FCC_A#; 6000 N 97Ans ! 
+ PARAMETER G(LIQUID,B;0) 0.01 +GLIQNI#-GHSERNI#-GMAGNI#+FCC_B#; 6000 N 97Ans ! 
+
+
+ PAR  L(LIQUID,A,B;0),,               -207109.28+41.31501*T;,,      N 97Ans !
+ PAR  L(LIQUID,A,B;1),,               -10185.79+5.8714*T;,,         N 97Ans !
+ PAR  L(LIQUID,A,B;2),,               +81204.81-31.95713*T;,,       N 97Ans !
+ PAR  L(LIQUID,A,B;3),,               +4365.35-2.51632*T;,,         N 97Ans !
+ PAR  L(LIQUID,A,B;4),,               -22101.64+13.16341*T;,,       N 97Ans !
+
+$
+ LIST-OF-REFERENCE
+ NUMBER  SOURCE
+  Null   'No source necessary'
+  SGTE  'SGTE Unary Database version v5.0'
+  97Ans 'I. Ansara et al. (1997) doi:10.1016/S0925-8388(96)02652-7'
+  01Dup 'N. Dupin et al. (2001) doi:10.1016/S0364-5916(01)00049-9'
+  01Kus 'A. Kusoffsky et al. (2001) doi:10.1016/S0364-5916(02)00007-X'
+  14Abe 'T. Abe and M. Shimono (2014) doi:10.1016/j.calphad.2013.11.006'
+  15Lin 'B. Lindahl et al. (2015) doi:10.1016/j.calphad.2015.09.008'
+  20Dav 'T. Davey et al. 2020'
+!
+
