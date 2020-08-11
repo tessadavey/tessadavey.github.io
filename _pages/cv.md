@@ -11,9 +11,10 @@ redirect_from:
 
 Education
 ======
-* MSci in Physics with Theoretical Physics, Department of Physics, Imperial College London, 2012
-* MSc in Shock Physics, Department of Physics, Imperial College London, 2013
 * PhD in Materials Science, Department of Materials, Imperial College London, 2017
+* MSc in Shock Physics, Department of Physics, Imperial College London, 2013
+* MSci in Physics with Theoretical Physics, Department of Physics, Imperial College London, 2012
+
 
 Work experience
 ======
