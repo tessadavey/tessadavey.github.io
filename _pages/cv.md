@@ -22,6 +22,7 @@ Work experience
   * Tohoku University, Japan
   * Working at the Fracture and Reliability Research Institute within the School of Engineering, in collaboration with the Institute for Materials Research at Tohoku University.
   * Awarded (PI) Kakenhi Grant-in-Aid for Early Career Researchers 19K15273 (2019-2021), "Developing models for CALPHAD-type phase diagrams that directly consider the effect of structural point defects".
+  * Awarded (Co-I) Tohoku University-Tsinghua University Collaborative Research Fund (2020-2022), "Strain-Controlled Graphene-Nanoribbon-Base Biochemical Sensors with High Selectivity and Sensitivity".
 
 * March 2017 - July 2017: Postdoctoral Research Associate
   * Imperial College London, UK
