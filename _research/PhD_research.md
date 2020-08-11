@@ -18,7 +18,7 @@ Developments in first-principles calculations have recently allowed access to pr
 
 The carbon-zirconium phase diagram has previously been assessed using the CALPHAD approach in 1995 by Fernandez Guillermet [2]. Since then, developments in experimental techniques and theoretical methods have provided access to new information about the phase diagram and thermodynamic properties of phases within this system. In particular, fully anharmonic ab initio calculations from Duff et al. [3] were used to describe the Gibbs energy of ZrC. Other experimental insights include improved knowledge of the ZrC+C eutectic reaction, liquidus, and solidus. A review of all the data in the literature was conducted and a new CALPHAD assessment was performed incorporating the new insights [1]. 
 
-<br/><img src='/_research/ZrC_Davey2017.png'>
+<br/><img src='/http://tessadavey.com/_research/ZrC_Davey2017.png'>
 
 1. [Davey T. Thermodynamic assessments of the (Zr, Hf) carbides and borides revisited and informed by the calculation of defect formation energies in ZrC. Imperial College London; 2017.](https://spiral.imperial.ac.uk/handle/10044/1/49433 "PhD thesis")
 2. [Fernández Guillermet A. Analysis of thermochemical properties and phase stability in the zirconium-carbon system. J Alloys Compd. 1995;217:69–89.](https://doi.org/10.1016/0925-8388(94)01310-E)
