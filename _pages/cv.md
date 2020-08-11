@@ -88,7 +88,7 @@ Awards
 Service and leadership
 ======
 * Symposium organisation
-  * ACerS Winter Workshop (2017)
+  * American Ceramic Society's Winter Workshop (2017)
   * The Future of Materials Science Academia: Preparing for a Career in Higher Education at MRS Fall (2018)
   * Novel, Green, and Strategic Processing and Manufacturing Technologies at GFMAT-2 (2019)
   * Global Young Investigator Forum at ICACC (2021)
