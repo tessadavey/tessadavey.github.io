@@ -19,5 +19,12 @@
 <link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">
 
 
-<meta name="robots" content="noindex" />
 <meta http-equiv="cleartype" content="on">
+
+
+{% if page.url != "/" %}
+ <meta name="robots" content="noindex" />
+{% endif %}
+
+
+
