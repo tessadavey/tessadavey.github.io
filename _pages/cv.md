@@ -117,6 +117,7 @@ Service and leadership
     * Member of the ECD Jubilee Scholars committee
   * Basic Science Division
     * Member of the Long Range Planning Committee
+    * Member of the Sosman Award Committee 
 * Materials Research Society (MRS)
   * Member of the Student Engagement Subcommittee (2019 - present)
 * Imperial College London
