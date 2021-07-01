@@ -23,6 +23,7 @@ Work experience
   * Working at the Fracture and Reliability Research Institute within the School of Engineering, in collaboration with the Institute for Materials Research at Tohoku University.
   * Awarded (PI) Kakenhi Grant-in-Aid for Early Career Researchers 19K15273 (2019-2021), "Developing models for CALPHAD-type phase diagrams that directly consider the effect of structural point defects".
   * Awarded (Co-I) Tohoku University-Tsinghua University Collaborative Research Fund (2020-2022), "Strain-Controlled Graphene-Nanoribbon-Base Biochemical Sensors with High Selectivity and Sensitivity".
+  * Awarded (PI) Kakenhi Grant-in-Aid for Early Career Researchers 21K14393 (2021-2024), "Developing CALPHAD-type models for Zr-C-O high-temperature ceramics considering the effects of short-range-ordering".
 
 * March 2017 - July 2017: Postdoctoral Research Associate
   * Imperial College London, UK
@@ -88,12 +89,17 @@ Awards
 Service and leadership
 ======
 * Symposium organisation
-  * American Ceramic Society's Winter Workshop (2017)
-  * The Future of Materials Science Academia: Preparing for a Career in Higher Education at MRS Fall (2018)
-  * Novel, Green, and Strategic Processing and Manufacturing Technologies at GFMAT-2 (2019)
-  * Global Young Investigator Forum at ICACC (2021)
-  * Advancing the Global Ceramics Community: Fostering Diversity in an Ever-Changing World at PACRIM (2021)
+  * Co-organiser of the American Ceramic Society's Winter Workshop (2017)
+  * Co-organiser of The Future of Materials Science Academia: Preparing for a Career in Higher Education at MRS Fall (2018)
+  * Co-organiser of Novel, Green, and Strategic Processing and Manufacturing Technologies at GFMAT-2 (2019)
+  * Co-organiser of Global Young Investigator Forum (GYIF) at ICACC (2021, 2022)
+  * Co-organiser of Advancing the Global Ceramics Community: Fostering Diversity in an Ever-Changing World at PACRIM (2021)
+  * Co-organiser of Advanced Structural Ceramics for Extreme Environments at PACRIM (2021)
+  * Co-organiser of Phase Transformations in Ceramics: Science and Applications at MS&T (2022)
+  * Co-organiser of ACerS/TMS Emerging Faculty Symposium at MS&T (2022)
+
 * American Ceramic Society (ACerS)
+  * Secretary of the Japan Chapter (2021 - present)
   * Member of the Member Services Committee (2020 - present)
   * Member of the Strategic Planning and Emergent Opportunities Committee (2015-2019)
   * Member of the Subcommittee on Diversity and Inclusion (2016 - 2018)
