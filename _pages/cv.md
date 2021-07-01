@@ -21,7 +21,7 @@ Work experience
 * July 2017 - present: Assistant Professor
   * Tohoku University, Japan
   * Working at the Fracture and Reliability Research Institute within the School of Engineering, in collaboration with the Institute for Materials Research at Tohoku University.
-  * Awarded (PI) Kakenhi Grant-in-Aid for Early Career Researchers 19K15273 (2019-2021), "Developing models for CALPHAD-type phase diagrams that directly consider the effect of structural point defects".
+  * Awarded (PI) Kakenhi Grant-in-Aid for Early Career Researchers 19K15273 (2019-2022), "Developing models for CALPHAD-type phase diagrams that directly consider the effect of structural point defects".
   * Awarded (Co-I) Tohoku University-Tsinghua University Collaborative Research Fund (2020-2022), "Strain-Controlled Graphene-Nanoribbon-Base Biochemical Sensors with High Selectivity and Sensitivity".
   * Awarded (Co-I) Kakenhi Fund for the Promotion of Joint International Research (Fostering Joint International Research (B)) 20KK0083 (2020-2023), "Strain-Controlled Graphene-Nanoribbon-Base Biochemical Sensors with High Selectivity and Sensitivity".
   * Awarded (PI) Kakenhi Grant-in-Aid for Early Career Researchers 21K14393 (2021-2024), "Developing CALPHAD-type models for Zr-C-O high-temperature ceramics considering the effects of short-range-ordering".
